@@ -35,5 +35,6 @@
   home.packages = with pkgs; [
     # scaleway-cli
     yadm
+    (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion
   ];
 }
