@@ -51,6 +51,7 @@
 
   home.packages = with pkgs; [
     emacs
+    fantasque-sans-mono
     jetbrains-mono
     # scaleway-cli
     yadm

@@ -75,7 +75,7 @@
   (use-package solaire-mode
     :hook (after-init . solaire-global-mode))
 
-  (add-to-list 'default-frame-alist '(font . "Jetbrains Mono-12"))
+  (add-to-list 'default-frame-alist '(font . "Fantasque Sans Mono-15"))
   (setq-default line-spacing 2)
 
   (use-package all-the-icons
@@ -95,8 +95,8 @@
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
 
-    (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
-    (doom-themes-treemacs-config)
+    ;; (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
+    ;; (doom-themes-treemacs-config)
 
     ;; Corrects (and improves) org-mode's native fontification.
     (doom-themes-org-config))
@@ -240,6 +240,7 @@
     (treemacs-define-RET-action 'file-node-closed 'treemacs-visit-node-and-close)
     (add-to-list 'treemacs-pre-file-insert-predicates #'treemacs-is-file-git-ignored?)
     (setq treemacs-read-string-input 'from-minibuffer)
+    (treemacs-resize-icons 18)
 
     (defun treemacs-ignore-example (filename absolute-path)
       (or (string-match-p (regexp-quote "node_modules") absolute-path)))
@@ -292,6 +293,7 @@
 	     ("\\.jsx\\'" . web-mode)
 	     ("\\.ts\\'" . web-mode)
 	     ("\\.tsx\\'" . web-mode)
+	     ("\\.hbs\\'" . web-mode)
 	     ("\\.html\\'" . web-mode))
     :hook (web-mode . (lambda ()
 		      (when (string-equal "tsx" (file-name-extension buffer-file-name))
@@ -386,8 +388,7 @@
 * Snippets
 #+BEGIN_SRC emacs-lisp :results silent
 (use-package emmet-mode
-  :hook
-  (css-mode html-mode))
+  :hook (web-mode css-mode html-mode))
 
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode))
