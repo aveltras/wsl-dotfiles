@@ -260,9 +260,9 @@
 ** LSP
 #+BEGIN_SRC emacs-lisp :results silent
 (use-package lsp-mode
-  :commands lsp
-  :config
-  (setq lsp-modeline-diagnostics-scope :project))
+  :commands (lsp lsp-deferred)
+  :hook (typescript-mode . lsp)
+  :config (setq lsp-modeline-diagnostics-scope :project))
 
 (use-package lsp-ui
   :config
@@ -316,6 +316,7 @@
 #+END_SRC
 *** Javascript / TypeScript
 #+BEGIN_SRC emacs-lisp :results silent
+(use-package typescript-mode)
   ;; (use-package tide
   ;;   :after (typescript-mode company flycheck)
   ;;   :hook ((typescript-mode . tide-setup)
