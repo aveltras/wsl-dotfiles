@@ -10,10 +10,22 @@
     enable = true;
     sessionVariables = {
       DISPLAY = "$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0";
+      PS1 = " \\[\\033[1;36m\\]\\u\\[\\033[1;31m\\]@\\[\\033[1;32m\\]\\h:\\[\\033[1;35m\\]\\w\\[\\033[1;31m\\]\\$\\[\\033[0m\\] ";
     };
     shellAliases = {
+      ls = "ls --color=auto";
+      grep = "grep --color=auto";
+      fgrep = "fgrep --color=auto";
+      egrep = "egrep --color=auto";
       ll = "ls -l";
     };
+  };
+
+
+  
+  programs.dircolors = {
+    enable = true;
+    enableBashIntegration = true;
   };
 
   fonts.fontconfig.enable = true;

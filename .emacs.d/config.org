@@ -90,7 +90,7 @@
     ;; Global settings (defaults)
     (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
 	  doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    (load-theme 'doom-solarized-light t)
+    (load-theme 'doom-gruvbox t)
 
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
@@ -326,8 +326,8 @@
 #+END_SRC
 *** Nix
 #+BEGIN_SRC emacs-lisp :results silent
-  ;; (use-package nix-mode
-    ;; :mode "\\.nix\\'")
+  (use-package nix-mode
+    :mode "\\.nix\\'")
 #+END_SRC
 *** Rust
 #+BEGIN_SRC emacs-lisp :results silent
