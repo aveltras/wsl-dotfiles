@@ -11,6 +11,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(setq default-directory "~/")
+
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 

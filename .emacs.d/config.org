@@ -314,11 +314,11 @@
 #+END_SRC
 *** Javascript / TypeScript
 #+BEGIN_SRC emacs-lisp :results silent
-(use-package tide
-  :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
+  ;; (use-package tide
+  ;;   :after (typescript-mode company flycheck)
+  ;;   :hook ((typescript-mode . tide-setup)
+  ;;          (typescript-mode . tide-hl-identifier-mode)
+  ;;          (before-save . tide-format-before-save)))
 #+END_SRC
 *** GraphQL
 #+BEGIN_SRC emacs-lisp :results silent
