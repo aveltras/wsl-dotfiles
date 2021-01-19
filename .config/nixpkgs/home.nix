@@ -44,8 +44,8 @@
     userEmail = "romain.viallard@outlook.fr";
   };
 
-  home.username = "romain";
-  home.homeDirectory = "/home/romain";
+  home.username = "wsl";
+  home.homeDirectory = "/home/wsl";
   
   home.stateVersion = "21.03";
 
@@ -55,6 +55,6 @@
     jetbrains-mono
     # scaleway-cli
     yadm
-    (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion
+    # (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion
   ];
 }
