@@ -382,8 +382,12 @@
 #+END_SRC
 *** SQL
 #+BEGIN_SRC emacs-lisp :results silent
-(use-package sql-indent
-  :hook (sql-mode . sqlind-minor-mode))
+(use-package sqlformat
+  :hook (sql-mode . sqlformat-on-save-mode)
+  :config
+  (setq sqlformat-command 'pgformatter))
+  ;; (use-package sql-indent
+    ;; :hook (sql-mode . sqlind-minor-mode))
 #+END_SRC
 * Snippets
 #+BEGIN_SRC emacs-lisp :results silent
